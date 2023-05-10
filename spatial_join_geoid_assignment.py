@@ -16,8 +16,6 @@
 # approximately 1 minute. This excludes the time taken to load the shapefile.
 # ----------------------------------------------------------------------------
 
-##### NEEDS UPDATE on making the geoid a string value as int type removes the 0 at the beginning #####
-import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 import os
@@ -63,6 +61,7 @@ gdf_joined = gdf_joined[['ROW_WID', 'LAT', 'LON', 'STATE', 'GEOID']]  # Keep onl
 
 
 # Save the DataFrame with the new column to a new CSV file
+# The csv will not have leading zeros
 gdf_joined.to_csv('AR_geoid.csv', index=False) ############################################################################################################################### Change
 
 # Check the total number of rows in the GeoDataFrame
