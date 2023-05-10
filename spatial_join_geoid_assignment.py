@@ -29,7 +29,8 @@ logging.basicConfig(filename='error_log.txt', level=logging.ERROR)
 
 
 # Read your CSV file
-csv_file = 'state_AR.csv' ############################################################################################################################################################# Change 
+csv_file = 'state_AR.csv' ############################################################################################################################################################# Change based on state
+
 #df = pd.read_csv(csv_file)
 df = pd.read_csv(csv_file, dtype={'GEOID20': str})
 # df = df.head(1000000)
@@ -38,7 +39,8 @@ print(df.head())
 start_time_shp = time.time()
 
 # Read the shapefile
-shapefile_path = "...tl_2022_AR_05_tabblock20/tl_2022_05_tabblock20.shp" ################# Change
+shapefile_path = "...tl_2022_AR_05_tabblock20/tl_2022_05_tabblock20.shp" ################# Change based on state
+
 with fiona.Env(SHAPE_RESTORE_SHX='YES'):
     gdf = gpd.read_file(shapefile_path)
 
@@ -62,7 +64,8 @@ gdf_joined = gdf_joined[['ROW_WID', 'LAT', 'LON', 'STATE', 'GEOID']]  # Keep onl
 
 # Save the DataFrame with the new column to a new CSV file
 # The csv will not have leading zeros
-gdf_joined.to_csv('AR_geoid.csv', index=False) ############################################################################################################################### Change
+gdf_joined.to_csv('AR_geoid.csv', index=False) ############################################################################################################################### Change based on state
+
 
 # Check the total number of rows in the GeoDataFrame
 total_rows = len(gdf_joined)
