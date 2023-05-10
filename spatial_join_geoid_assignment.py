@@ -15,7 +15,7 @@
 # it can process 1 million rows of latitude and longitude coordinates in
 # approximately 1 minute. This excludes the time taken to load the shapefile.
 # ----------------------------------------------------------------------------
-
+import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 import os
